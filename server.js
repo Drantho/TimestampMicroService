@@ -21,6 +21,11 @@ router.get('/:date', function(req, res){
  res.send(getDates(req.params.date) );
 });
 
+router.get('/', function(req, res){
+ res.type('text/html');
+ res.send(getDates(undefined));
+});
+
 function getDates(str){
   
   var dates = new Object;
